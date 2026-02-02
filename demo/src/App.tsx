@@ -65,6 +65,27 @@ function App() {
     </div>
   );
 
+  function AnimationButton({ name, label }: { name: string; label: string }) {
+    const [playing, setPlaying] = useState(false);
+
+    return (
+      <button
+        className="bg-background-secondary p-4 rounded-lg hover:bg-background-tertiary transition-colors"
+        onClick={() => {
+          setPlaying(true);
+          setTimeout(() => setPlaying(false), 1000);
+        }}
+      >
+        <div
+          className={`w-12 h-12 mx-auto bg-interactive-primary rounded-lg mb-3 ${
+            playing ? `animate-${name}` : ''
+          }`}
+        />
+        <span className="text-sm">{label}</span>
+      </button>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -463,26 +484,9 @@ function App() {
                     { name: 'pulse', label: 'Pulse' },
                     { name: 'bounce', label: 'Bounce' },
                     { name: 'shake', label: 'Shake' },
-                  ].map((anim) => {
-                    const [playing, setPlaying] = useState(false);
-                    return (
-                      <button
-                        key={anim.name}
-                        className="bg-background-secondary p-4 rounded-lg hover:bg-background-tertiary transition-colors"
-                        onClick={() => {
-                          setPlaying(true);
-                          setTimeout(() => setPlaying(false), 1000);
-                        }}
-                      >
-                        <div
-                          className={`w-12 h-12 mx-auto bg-interactive-primary rounded-lg mb-3 ${
-                            playing ? `animate-${anim.name}` : ''
-                          }`}
-                        />
-                        <span className="text-sm">{anim.label}</span>
-                      </button>
-                    );
-                  })}
+                  ].map((anim) => (
+                    <AnimationButton key={anim.name} name={anim.name} label={anim.label} />
+                  ))}
                 </div>
               </div>
 
