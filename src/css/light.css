@@ -36,7 +36,7 @@
   --colors-status-warning: #FA6400;
   --colors-status-info: #0080FF;
   --typography-fontFamilies-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --typography-fontFamilies-mono: "Fira Code", "JetBrains Mono", Consolas, monospace;
+  --typography-fontFamilies-display: "Plus Jakarta Sans", Inter, sans-serif;
   --typography-fontSizes-xs: 0.75rem;
   --typography-fontSizes-sm: 0.875rem;
   --typography-fontSizes-base: 1rem;
@@ -46,11 +46,15 @@
   --typography-fontSizes-3xl: 1.875rem;
   --typography-fontSizes-4xl: 2.25rem;
   --typography-fontSizes-5xl: 3rem;
+  --typography-fontWeights-extralight: 100;
+  --typography-fontWeights-thin: 200;
   --typography-fontWeights-light: 300;
-  --typography-fontWeights-normal: 400;
+  --typography-fontWeights-regular: 400;
   --typography-fontWeights-medium: 500;
   --typography-fontWeights-semibold: 600;
   --typography-fontWeights-bold: 700;
+  --typography-fontWeights-extrabold: 800;
+  --typography-fontWeights-black: 900;
   --typography-lineHeights-tight: 1.25;
   --typography-lineHeights-normal: 1.5;
   --typography-lineHeights-relaxed: 1.75;

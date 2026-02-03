@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { version } from '@smcore/corex-design';
 import { useTheme, colorPalettes } from '@smcore/corex-design/react';
 import {
   ArrowRight,
@@ -204,9 +205,7 @@ function App() {
                             title={`${palette}-${shade}: ${colorPalettes[palette][shade]}`}
                           >
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                              <span className="text-xs bg-black/50 text-white px-1 rounded">
-                                {shade}
-                              </span>
+                              <span className="text-xs bg-black/50 text-white px-1 rounded">{shade}</span>
                             </div>
                           </div>
                         ))}
@@ -235,9 +234,45 @@ function App() {
             <section className="space-y-8 animate-fadeIn">
               <div>
                 <h2 className="text-3xl font-bold mb-2">Tipografia</h2>
-                <p className="text-text-secondary">
-                  Sistema tipografico con escalas de tamaño, pesos y alturas de linea.
-                </p>
+                <p className="text-text-secondary">Sistema tipografico con escalas de tamaño, pesos y alturas de linea.</p>
+              </div>
+
+              {/* Font Families */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Familias</h3>
+
+                <div className="grid gap-6 md:grid-cols-2 bg-background-secondary p-6 rounded-xl">
+                  {[
+                    {
+                      class: "font-sans",
+                      name: "Inter",
+                      role: "Sans / UI / Body",
+                    },
+                    {
+                      class: "font-display",
+                      name: "Plus Jakarta Sans",
+                      role: "Display / Headings",
+                    },
+                  ].map((family) => (
+                    <div
+                      key={family.class}
+                      className="rounded-lg border border-border-primary bg-background p-6"
+                    >
+                      <p className="text-sm text-muted-foreground mb-2">
+                        {family.role}
+                      </p>
+                      <h4 className={`text-2xl font-semibold mb-4 ${family.class}`}>
+                        {family.name}
+                      </h4>
+                      <p className={`text-4xl leading-tight mb-3 ${family.class}`}>
+                        Aa Bb Cc
+                      </p>
+                      <p className={`text-base ${family.class}`}>
+                        The quick brown fox jumps over the lazy dog
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Font Sizes */}
@@ -268,11 +303,15 @@ function App() {
                 <h3 className="text-xl font-semibold mb-4">Pesos</h3>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   {[
+                    { class: 'font-extralight', label: 'extralight (100)' },
+                    { class: 'font-thin', label: 'thin (200)' },
                     { class: 'font-light', label: 'light (300)' },
-                    { class: 'font-normal', label: 'normal (400)' },
+                    { class: 'font-regular', label: 'regular (400)' },
                     { class: 'font-medium', label: 'medium (500)' },
                     { class: 'font-semibold', label: 'semibold (600)' },
                     { class: 'font-bold', label: 'bold (700)' },
+                    { class: 'font-extrabold', label: 'extrabold (800)' },
+                    { class: 'font-black', label: 'black (900)' },
                   ].map((weight) => (
                     <div key={weight.class} className="bg-background-secondary p-4 rounded-lg text-center">
                       <span className={`text-lg ${weight.class}`}>Aa</span>
@@ -285,9 +324,9 @@ function App() {
               <CodeBlock
                 title="Uso de tipografia"
                 code={`<h1 className="text-5xl font-bold">Titulo</h1>
-<p className="text-base font-normal">Parrafo normal</p>
+<p className="text-base font-sans">Parrafo normal</p>
 <span className="text-sm text-text-secondary">Texto secundario</span>
-<code className="font-mono text-sm">codigo</code>`}
+<code className="font-display text-sm">codigo</code>`}
               />
             </section>
           )}
@@ -826,7 +865,7 @@ npm run generate:tokens`}
 
       {/* Footer */}
       <footer className="bg-background-secondary border-t border-border-primary py-4 text-center text-text-secondary text-sm">
-        @smcore/corex-design v1.0.0 - Documentacion Interactiva
+        @smcore/corex-design v{version} - Documentacion Interactiva
       </footer>
 
       {/* Toast notification */}

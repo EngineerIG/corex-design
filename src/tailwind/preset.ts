@@ -20,7 +20,7 @@ export function createTailwindPreset(options: TailwindPresetOptions = {}): Tailw
     colors,
     fontFamily: {
       sans: fontFamilies.sans.split(', '),
-      mono: fontFamilies.mono.split(', '),
+      display: fontFamilies.display.split(', '),
     },
     fontSize: {
       xs: fontSizes.xs,
@@ -34,11 +34,15 @@ export function createTailwindPreset(options: TailwindPresetOptions = {}): Tailw
       '5xl': fontSizes['5xl'],
     },
     fontWeight: {
+      extralight: String(fontWeights.extralight),
+      thin: String(fontWeights.thin),
       light: String(fontWeights.light),
-      normal: String(fontWeights.normal),
+      regular: String(fontWeights.regular),
       medium: String(fontWeights.medium),
       semibold: String(fontWeights.semibold),
       bold: String(fontWeights.bold),
+      extrabold: String(fontWeights.extrabold),
+      black: String(fontWeights.black),
     },
     lineHeight: {
       tight: String(lineHeights.tight),

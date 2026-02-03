@@ -113,9 +113,27 @@ export interface AnimationsConfig {
 
 export type ZIndexConfig = Record<string, number>;
 
+export interface FontFamilyDefinition {
+  name: string;
+  files: {
+    normal?: string;
+    italic?: string;
+  };
+  variable?: boolean;
+  weights?: [number, number];
+  fallbacks?: string[];
+}
+
+export interface FontsConfig {
+  sourceDir: string;
+  formats: ('woff2' | 'ttf')[];
+  families: Record<string, FontFamilyDefinition>;
+}
+
 export interface DesignConfig {
   colors: ColorsConfig;
   icons: IconsConfig;
+  fonts: FontsConfig;
   typography: TypographyConfig;
   spacing: SpacingConfig;
   borders: BordersConfig;

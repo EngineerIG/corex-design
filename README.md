@@ -27,6 +27,7 @@ export default {
 /* index.css (tailwind V4) */
 @import 'tailwindcss';
 @config "../tailwind.config.ts";
+@import '@smcore/corex-design/css/fonts';
 @import '@smcore/corex-design/css/themes';
 ```
 
@@ -35,6 +36,7 @@ export default {
 ```tsx
 // main.tsx
 import { ThemeProvider } from '@smcore/corex-design/react';
+import '@smcore/corex-design/css/fonts';
 import '@smcore/corex-design/css/themes'; // omitir si ya está importado en index.css
 import './index.css'; // tu archivo con @tailwind directives
 ```
@@ -82,6 +84,7 @@ function ThemeToggle() {
 // main.ts
 import { createApp } from 'vue';
 import { ThemePlugin } from '@smcore/corex-design/vue';
+import '@smcore/corex-design/css/fonts';
 import '@smcore/corex-design/css/themes';
 
 const app = createApp(App);
