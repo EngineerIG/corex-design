@@ -5,7 +5,7 @@
 
 export const fontFamilies = {
   sans: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-  mono: '"Fira Code", "JetBrains Mono", Consolas, monospace',
+  display: '"Plus Jakarta Sans", Inter, sans-serif',
 } as const;
 
 export const fontSizes = {
@@ -21,11 +21,15 @@ export const fontSizes = {
 } as const;
 
 export const fontWeights = {
+  extralight: 100,
+  thin: 200,
   light: 300,
-  normal: 400,
+  regular: 400,
   medium: 500,
   semibold: 600,
   bold: 700,
+  extrabold: 800,
+  black: 900,
 } as const;
 
 export const lineHeights = {

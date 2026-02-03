@@ -366,13 +366,45 @@ const config: DesignConfig = {
 
   /**
    * ===================
+   * CONFIGURACIÓN DE FUENTES
+   * ===================
+   */
+  fonts: {
+    sourceDir: 'src/fonts',
+    formats: ['woff2'],
+    families: {
+      sans: {
+        name: 'Inter',
+        files: {
+          normal: 'Inter-VariableFont_opsz,wght.woff2',
+          italic: 'Inter-Italic-VariableFont_opsz,wght.woff2',
+        },
+        variable: true,
+        weights: [100, 900],
+        fallbacks: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+      },
+      display: {
+        name: 'Plus Jakarta Sans',
+        files: {
+          normal: 'PlusJakartaSans-VariableFont_wght.woff2',
+          italic: 'PlusJakartaSans-Italic-VariableFont_wght.woff2',
+        },
+        variable: true,
+        weights: [100, 900],
+        fallbacks: ['Inter', 'sans-serif'],
+      },
+    },
+  },
+
+  /**
+   * ===================
    * CONFIGURACIÓN DE TIPOGRAFÍA
    * ===================
    */
   typography: {
     fontFamilies: {
       sans: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      mono: '"Fira Code", "JetBrains Mono", Consolas, monospace',
+      display: '"Plus Jakarta Sans", Inter, sans-serif',
     },
     fontSizes: {
       xs: '0.75rem',    // 12px
@@ -386,11 +418,15 @@ const config: DesignConfig = {
       '5xl': '3rem',    // 48px
     },
     fontWeights: {
+      extralight: 100,
+      thin: 200,
       light: 300,
-      normal: 400,
+      regular: 400,
       medium: 500,
       semibold: 600,
       bold: 700,
+      extrabold: 800,
+      black: 900,
     },
     lineHeights: {
       tight: 1.25,

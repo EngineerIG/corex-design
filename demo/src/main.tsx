@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from '@smcore/corex-design/react';
-import '@smcore/corex-design/css/themes';
+import '@smcore/corex-design/css/fonts';
+import '@smcore/corex-design/css/themes'; 
 import './index.css';
 import App from './App';
 

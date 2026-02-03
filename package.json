@@ -1,6 +1,6 @@
 {
   "name": "@smcore/corex-design",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Design tokens and icon system for multi-framework applications",
   "type": "module",
   "main": "./dist/index.js",
@@ -30,7 +30,9 @@
       "types": "./dist/tailwind/index.d.ts",
       "import": "./dist/tailwind/index.mjs",
       "require": "./dist/tailwind/index.js"
-    }
+    },
+    "./css/fonts": "./dist/css/fonts.css",
+    "./fonts/*": "./dist/fonts/*"
   },
   "files": [
     "dist",
@@ -39,15 +41,17 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "npm run clean && npm run generate",
-    "build": "vite build && npm run copy:css",
-    "copy:css": "node -e \"const fs=require('fs');const path=require('path');fs.mkdirSync('dist/css',{recursive:true});['tokens.css','themes.css','light.css','dark.css'].forEach(f=>fs.copyFileSync(path.join('src/css',f),path.join('dist/css',f)))\"",
+    "build": "vite build && npm run copy:css && npm run copy:fonts",
+    "copy:css": "node -e \"const fs=require('fs');const path=require('path');fs.mkdirSync('dist/css',{recursive:true});['tokens.css','themes.css','light.css','dark.css','fonts.css'].forEach(f=>fs.copyFileSync(path.join('src/css',f),path.join('dist/css',f)))\"",
+    "copy:fonts": "node -e \"const fs=require('fs');fs.cpSync('src/fonts','dist/fonts',{recursive:true})\"",
     "clean": "rimraf dist",
-    "generate": "npm run generate:tokens && npm run generate:icons && npm run generate:css",
+    "generate": "npm run generate:tokens && npm run generate:icons && npm run generate:css && npm run generate:fonts",
     "generate:tokens": "tsx scripts/build-from-config.ts",
     "generate:icons": "npm run generate:icons:react && npm run generate:icons:vue",
     "generate:icons:react": "tsx scripts/generate-icons-react.ts",
     "generate:icons:vue": "tsx scripts/generate-icons-vue.ts",
     "generate:css": "tsx scripts/generate-css-vars.ts",
+    "generate:fonts": "tsx scripts/generate-fonts.ts",
     "add:color": "tsx scripts/add-color.ts",
     "add:icon": "tsx scripts/add-icon.ts",
     "typecheck": "tsc --noEmit",
