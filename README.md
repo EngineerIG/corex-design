@@ -1,11 +1,11 @@
-# @oyaipen/design-tokens
+# @smcore/corex-design
 
 Sistema de diseño unificado para React, Vue y Tailwind CSS.
 
 ## Instalación
 
 ```bash
-npm install @oyaipen/design-tokens
+npm install @smcore/corex-design
 ```
 
 ## Uso con React + Tailwind
@@ -15,7 +15,7 @@ npm install @oyaipen/design-tokens
 ```typescript
 // tailwind.config.ts
 import type { Config } from 'tailwindcss';
-import { tailwindPreset } from '@oyaipen/design-tokens/tailwind';
+import { tailwindPreset } from '@smcore/corex-design/tailwind';
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -23,12 +23,19 @@ export default {
 } satisfies Config;
 ```
 
+```css
+/* index.css (tailwind V4) */
+@import 'tailwindcss';
+@config "../tailwind.config.ts";
+@import '@smcore/corex-design/css/themes';
+```
+
 ### 2. Importar CSS del tema
 
 ```tsx
 // main.tsx
-import { ThemeProvider } from '@oyaipen/design-tokens/react';
-import '@oyaipen/design-tokens/css/themes';
+import { ThemeProvider } from '@smcore/corex-design/react';
+import '@smcore/corex-design/css/themes'; // omitir si ya está importado en index.css
 import './index.css'; // tu archivo con @tailwind directives
 ```
 
@@ -52,7 +59,7 @@ import './index.css'; // tu archivo con @tailwind directives
 ### 4. Iconos
 
 ```tsx
-import { Check, Heart, ArrowRight } from '@oyaipen/design-tokens/react';
+import { Check, Heart, ArrowRight } from '@smcore/corex-design/tailwind';
 
 <Check size={24} className="text-status-success" />
 <Heart size={24} />
@@ -61,7 +68,7 @@ import { Check, Heart, ArrowRight } from '@oyaipen/design-tokens/react';
 ### 5. Tema dinámico
 
 ```tsx
-import { useTheme } from '@oyaipen/design-tokens/react';
+import { useTheme } from '@smcore/corex-design/tailwind';
 
 function ThemeToggle() {
   const { themeName, toggleTheme } = useTheme();
@@ -74,8 +81,8 @@ function ThemeToggle() {
 ```typescript
 // main.ts
 import { createApp } from 'vue';
-import { ThemePlugin } from '@oyaipen/design-tokens/vue';
-import '@oyaipen/design-tokens/css/themes';
+import { ThemePlugin } from '@smcore/corex-design/vue';
+import '@smcore/corex-design/css/themes';
 
 const app = createApp(App);
 app.use(ThemePlugin);
@@ -83,8 +90,8 @@ app.use(ThemePlugin);
 
 ```vue
 <script setup>
-import { useTheme } from '@oyaipen/design-tokens/vue';
-import { Check } from '@oyaipen/design-tokens/vue';
+import { useTheme } from '@smcore/corex-design/vue';
+import { Check } from '@smcore/corex-design/vue';
 
 const { toggleTheme } = useTheme();
 </script>
@@ -128,6 +135,10 @@ npm run build              # Compilar librería
 ## Demo
 
 ```bash
+# desde la raíz del repo
+npm install
+npm run build
+
 cd demo
 npm install
 npm run dev
