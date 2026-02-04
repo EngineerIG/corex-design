@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface RiaProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const Ria = React.forwardRef<SVGSVGElement, RiaProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path fillRule="evenodd" d="M5.251 7.026c.753 0 1.395.135 1.928.405.535.266.943.643 1.222 1.133.283.487.424 1.061.424 1.72 0 .662-.143 1.232-.429 1.71a2.78 2.78 0 0 1-1.24 1.09c-.03.014-.062.026-.093.039L9.181 17H6.853l-1.89-3.536h-1.54V17H1.316V7.026h3.936ZM3.424 11.77h1.432c.403 0 .737-.056 1.003-.166.266-.11.464-.276.594-.497.133-.22.2-.495.2-.823 0-.331-.067-.61-.2-.838a1.224 1.224 0 0 0-.599-.515c-.266-.12-.602-.181-1.007-.181H3.424v3.02Z" clipRule="evenodd" /><path d="M12.424 17h-2.109V7.026h2.109V17Z" /><path fillRule="evenodd" d="M23.218 17h-2.26l-.738-2.274h-3.6L15.878 17h-2.26l3.442-9.974h2.718L23.218 17Zm-6.064-3.92h2.53L18.46 9.305h-.078l-1.228 3.773Z" clipRule="evenodd" /></svg>
+  )
+);
+
+Ria.displayName = 'Ria';
+
+export default Ria;

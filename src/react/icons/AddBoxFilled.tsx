@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface AddBoxFilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const AddBoxFilled = React.forwardRef<SVGSVGElement, AddBoxFilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M11 13v3c0 .283.096.52.287.712.192.192.43.288.713.288s.52-.096.713-.288A.968.968 0 0 0 13 16v-3h3a.97.97 0 0 0 .712-.287A.968.968 0 0 0 17 12a.968.968 0 0 0-.288-.713A.968.968 0 0 0 16 11h-3V8a.967.967 0 0 0-.287-.713A.968.968 0 0 0 12 7a.968.968 0 0 0-.713.287A.967.967 0 0 0 11 8v3H8a.967.967 0 0 0-.713.287A.968.968 0 0 0 7 12c0 .283.096.52.287.713.192.191.43.287.713.287h3Zm-6 8c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 3 19V5c0-.55.196-1.02.587-1.413A1.926 1.926 0 0 1 5 3h14c.55 0 1.02.196 1.413.587.39.393.587.863.587 1.413v14c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 19 21H5Z" /></svg>
+  )
+);
+
+AddBoxFilled.displayName = 'AddBoxFilled';
+
+export default AddBoxFilled;

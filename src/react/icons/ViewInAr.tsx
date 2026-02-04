@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface ViewInArProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const ViewInAr = React.forwardRef<SVGSVGElement, ViewInArProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M11 19.475 6 16.6a1.948 1.948 0 0 1-1-1.725v-5.75A1.948 1.948 0 0 1 6 7.4l5-2.875c.317-.183.65-.275 1-.275s.683.092 1 .275L18 7.4a1.948 1.948 0 0 1 1 1.725v5.75a1.948 1.948 0 0 1-1 1.725l-5 2.875c-.317.183-.65.275-1 .275s-.683-.092-1-.275Zm0-2.3v-4.6L7 10.25v4.625l4 2.3Zm2 0 4-2.3V10.25l-4 2.325v4.6ZM2 7V4c0-.55.196-1.02.587-1.413A1.926 1.926 0 0 1 4 2h3v2H4v3H2Zm5 15H4c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 2 20v-3h2v3h3v2Zm10 0v-2h3v-3h2v3c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 20 22h-3Zm3-15V4h-3V2h3c.55 0 1.02.196 1.413.587.39.393.587.863.587 1.413v3h-2Zm-8 3.85 3.95-2.325L12 6.25 8.05 8.525 12 10.85Z" /></svg>
+  )
+);
+
+ViewInAr.displayName = 'ViewInAr';
+
+export default ViewInAr;

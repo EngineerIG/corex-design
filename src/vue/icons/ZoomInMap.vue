@@ -1,0 +1,22 @@
+<template>
+  <svg
+    :width="size"
+    :height="size"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    v-bind="$attrs"
+  >
+    <path d="m3.9 21.5-1.4-1.4L5.6 17H3v-2h6v6H7v-2.6zm16.2 0L17 18.4V21h-2v-6h6v2h-2.6l3.1 3.1zM3 9V7h2.6L2.5 3.9l1.4-1.4L7 5.6V3h2v6zm12 0V3h2v2.6l3.1-3.1 1.4 1.4L18.4 7H21v2z"/>
+  </svg>
+</template>
+
+<script setup lang="ts">
+interface ZoomInMapProps {
+  size?: string | number;
+}
+
+withDefaults(defineProps<ZoomInMapProps>(), {
+  size: 24,
+});
+</script>

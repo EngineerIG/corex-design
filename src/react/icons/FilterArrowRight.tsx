@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface FilterArrowRightProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const FilterArrowRight = React.forwardRef<SVGSVGElement, FilterArrowRightProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M18.067 16h-3.175a.968.968 0 0 1-.713-.287.968.968 0 0 1-.287-.713.97.97 0 0 1 .287-.713.968.968 0 0 1 .713-.287h3.175l-.9-.9a.933.933 0 0 1-.275-.688c0-.275.1-.512.3-.712a.948.948 0 0 1 .7-.275c.283 0 .516.092.7.275l2.6 2.6c.1.1.17.208.212.325.042.117.063.242.063.375s-.021.258-.063.375a.877.877 0 0 1-.212.325l-2.6 2.6a.977.977 0 0 1-.688.287.93.93 0 0 1-.712-.287.948.948 0 0 1-.275-.7c0-.283.091-.517.275-.7l.875-.9Zm-8.175-3.7 4.95-6.3h-9.9l4.95 6.3Zm-2 .7L2.117 5.625a.904.904 0 0 1-.175-.313A1.062 1.062 0 0 1 1.892 5c0-.267.095-.5.287-.7.192-.2.43-.3.713-.3h14c.283 0 .52.1.712.3a.98.98 0 0 1 .288.7c0 .1-.017.204-.05.313a.904.904 0 0 1-.175.312L11.892 13v6c0 .283-.096.52-.288.712a.968.968 0 0 1-.712.288h-2a.967.967 0 0 1-.713-.288.968.968 0 0 1-.287-.712v-6Z" /></svg>
+  )
+);
+
+FilterArrowRight.displayName = 'FilterArrowRight';
+
+export default FilterArrowRight;

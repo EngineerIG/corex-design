@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface MinusProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const Minus = React.forwardRef<SVGSVGElement, MinusProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M6 13a.967.967 0 0 1-.713-.287A.968.968 0 0 1 5 12c0-.283.096-.52.287-.713A.967.967 0 0 1 6 11h12a.97.97 0 0 1 .712.287c.192.192.288.43.288.713s-.096.52-.288.713A.968.968 0 0 1 18 13H6Z" /></svg>
+  )
+);
+
+Minus.displayName = 'Minus';
+
+export default Minus;

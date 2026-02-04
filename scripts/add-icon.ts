@@ -65,15 +65,15 @@ function downloadFile(url: string): Promise<string> {
   });
 }
 
-// Convertir nombre a kebab-case
-function toKebabCase(name: string): string {
+// Convertir nombre a snake_case
+function toSnakeCase(name: string): string {
   return name
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/[\s_]+/g, '-')
+    .replace(/([a-z])([A-Z])/g, '$1_$2')
+    .replace(/[\s-]+/g, '_')
     .toLowerCase()
-    .replace(/[^a-z0-9-]/g, '')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+    .replace(/[^a-z0-9_]/g, '')
+    .replace(/_+/g, '_')
+    .replace(/^_|_$/g, '');
 }
 
 // Validar SVG
@@ -247,11 +247,11 @@ async function main() {
 
     // Solicitar nombre si no se proporcionó
     if (!name) {
-      name = await ask(rl, '📝 Nombre del icono (kebab-case): ');
+      name = await ask(rl, '📝 Nombre del icono (snake_case): ');
     }
 
-    // Convertir a kebab-case
-    name = toKebabCase(name);
+    // Convertir a snake_case
+    name = toSnakeCase(name);
 
     // Verificar si existe
     if (existingIcons.includes(name)) {
@@ -272,7 +272,7 @@ async function main() {
     console.log('  2. Usa el icono como:');
 
     const componentName = name
-      .split('-')
+      .split('_')
       .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
       .join('');
 

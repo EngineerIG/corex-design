@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface OpenInFullProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const OpenInFull = React.forwardRef<SVGSVGElement, OpenInFullProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M2.222 23c-.346 0-.636-.117-.87-.351A1.182 1.182 0 0 1 1 21.778v-7.334c0-.346.117-.636.351-.87.235-.235.525-.352.871-.352.347 0 .637.117.871.352.234.234.351.524.351.87v4.4l15.4-15.4h-4.4c-.346 0-.636-.117-.87-.35a1.183 1.183 0 0 1-.352-.872c0-.346.117-.636.352-.87.234-.235.524-.352.87-.352h7.334c.346 0 .636.117.87.351.235.235.352.525.352.871v7.334c0 .346-.117.636-.351.87a1.183 1.183 0 0 1-.871.352 1.18 1.18 0 0 1-.871-.352 1.183 1.183 0 0 1-.351-.87v-4.4l-15.4 15.4h4.4c.346 0 .636.117.87.35.235.235.352.526.352.872s-.117.636-.352.87a1.183 1.183 0 0 1-.87.352H2.222Z" /></svg>
+  )
+);
+
+OpenInFull.displayName = 'OpenInFull';
+
+export default OpenInFull;

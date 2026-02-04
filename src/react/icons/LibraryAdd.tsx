@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface LibraryAddProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const LibraryAdd = React.forwardRef<SVGSVGElement, LibraryAddProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M14 14c.283 0 .52-.096.713-.287A.968.968 0 0 0 15 13v-2h2a.97.97 0 0 0 .712-.287A.968.968 0 0 0 18 10a.967.967 0 0 0-.288-.713A.968.968 0 0 0 17 9h-2V7a.967.967 0 0 0-.287-.713A.968.968 0 0 0 14 6a.968.968 0 0 0-.713.287A.967.967 0 0 0 13 7v2h-2a.968.968 0 0 0-.713.287A.967.967 0 0 0 10 10c0 .283.096.52.287.713.192.191.43.287.713.287h2v2c0 .283.096.52.287.713.192.191.43.287.713.287Zm-6 4c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 6 16V4c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 8 2h12c.55 0 1.02.196 1.413.587.39.393.587.863.587 1.413v12c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 20 18H8Zm0-2h12V4H8v12Zm-4 6c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 2 20V7a.97.97 0 0 1 .288-.713A.968.968 0 0 1 3 6a.97.97 0 0 1 .712.287c.192.192.288.43.288.713v13h13c.283 0 .52.096.712.288.192.191.288.429.288.712s-.096.52-.288.712A.968.968 0 0 1 17 22H4Z" /></svg>
+  )
+);
+
+LibraryAdd.displayName = 'LibraryAdd';
+
+export default LibraryAdd;

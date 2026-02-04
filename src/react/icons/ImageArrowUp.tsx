@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface ImageArrowUpProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const ImageArrowUp = React.forwardRef<SVGSVGElement, ImageArrowUpProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M5 21c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 3 19V5c0-.55.196-1.02.587-1.413A1.926 1.926 0 0 1 5 3h8v2H5v14h14v-7h2v7c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 19 21H5Zm1-4h12l-3.75-5-3 4L9 13l-3 4Zm12-7V5.825L16.4 7.4 15 6l4-4 4 4-1.4 1.4L20 5.825V10h-2Z" /></svg>
+  )
+);
+
+ImageArrowUp.displayName = 'ImageArrowUp';
+
+export default ImageArrowUp;

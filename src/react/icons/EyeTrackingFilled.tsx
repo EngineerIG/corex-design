@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface EyeTrackingFilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const EyeTrackingFilled = React.forwardRef<SVGSVGElement, EyeTrackingFilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M6 23H3c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 1 21v-3h2v3h3v2Zm12 0v-2h3v-3h2v3c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 21 23h-3Zm-6-4.5c-2 0-3.813-.592-5.438-1.775C4.938 15.542 3.75 13.967 3 12c.75-1.967 1.938-3.542 3.563-4.725C8.188 6.092 10 5.5 12 5.5c2 0 3.813.592 5.438 1.775C19.063 8.458 20.25 10.033 21 12c-.75 1.967-1.938 3.542-3.563 4.725C15.813 17.908 14 18.5 12 18.5Zm0-3c.967 0 1.792-.342 2.475-1.025A3.372 3.372 0 0 0 15.5 12c0-.967-.342-1.792-1.025-2.475A3.372 3.372 0 0 0 12 8.5c-.967 0-1.792.342-2.475 1.025A3.372 3.372 0 0 0 8.5 12c0 .967.342 1.792 1.025 2.475A3.372 3.372 0 0 0 12 15.5Zm0-2c-.417 0-.77-.146-1.063-.438A1.446 1.446 0 0 1 10.5 12c0-.417.146-.77.438-1.063A1.446 1.446 0 0 1 12 10.5c.417 0 .77.146 1.063.438.291.291.437.645.437 1.062 0 .417-.146.77-.438 1.063A1.446 1.446 0 0 1 12 13.5ZM1 6V3c0-.55.196-1.02.587-1.413A1.926 1.926 0 0 1 3 1h3v2H3v3H1Zm20 0V3h-3V1h3c.55 0 1.02.196 1.413.587.39.393.587.863.587 1.413v3h-2Z" /></svg>
+  )
+);
+
+EyeTrackingFilled.displayName = 'EyeTrackingFilled';
+
+export default EyeTrackingFilled;

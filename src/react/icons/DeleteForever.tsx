@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface DeleteForeverProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const DeleteForever = React.forwardRef<SVGSVGElement, DeleteForeverProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="m9.4 16.5 2.6-2.6 2.6 2.6 1.4-1.4-2.6-2.6L16 9.9l-1.4-1.4-2.6 2.6-2.6-2.6L8 9.9l2.6 2.6L8 15.1l1.4 1.4ZM7 21c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 5 19V6H4V4h5V3h6v1h5v2h-1v13c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 21H7ZM17 6H7v13h10V6Z" /></svg>
+  )
+);
+
+DeleteForever.displayName = 'DeleteForever';
+
+export default DeleteForever;

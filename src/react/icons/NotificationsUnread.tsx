@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface NotificationsUnreadProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const NotificationsUnread = React.forwardRef<SVGSVGElement, NotificationsUnreadProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M12 22c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 10 20h4c0 .55-.196 1.02-.588 1.413A1.926 1.926 0 0 1 12 22Zm-7-3a.967.967 0 0 1-.713-.288A.968.968 0 0 1 4 18a.97.97 0 0 1 .287-.712A.967.967 0 0 1 5 17h1v-7c0-1.383.417-2.612 1.25-3.688.833-1.075 1.917-1.779 3.25-2.112v-.7c0-.417.146-.77.438-1.063A1.447 1.447 0 0 1 12 2c.417 0 .77.146 1.063.438.291.291.437.645.437 1.062v.325a4.606 4.606 0 0 0-.5 2.3c-.167-.033-.33-.063-.488-.088A3.29 3.29 0 0 0 12 6c-1.1 0-2.042.392-2.825 1.175C8.392 7.958 8 8.9 8 10v7h8v-6.425A5.007 5.007 0 0 0 18 11v6h1c.283 0 .52.096.712.288.192.191.288.429.288.712s-.096.52-.288.712A.968.968 0 0 1 19 19H5ZM18 9a2.893 2.893 0 0 1-2.125-.875A2.893 2.893 0 0 1 15 6c0-.833.292-1.542.875-2.125A2.893 2.893 0 0 1 18 3c.833 0 1.542.292 2.125.875S21 5.167 21 6s-.292 1.542-.875 2.125A2.893 2.893 0 0 1 18 9Z" /></svg>
+  )
+);
+
+NotificationsUnread.displayName = 'NotificationsUnread';
+
+export default NotificationsUnread;
