@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface MarkAsUnreadFilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const MarkAsUnreadFilled = React.forwardRef<SVGSVGElement, MarkAsUnreadFilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M4 17c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 2 15V7.15c0-.25.07-.496.212-.738.142-.241.338-.429.588-.562l6.8-3.4c.283-.133.583-.204.9-.213.317-.008.617.063.9.213l6.65 3.4c.2.1.37.258.512.475.142.217.238.442.288.675h-2.925L10.5 4.25 4 7.475V17Zm3 4c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 5 19v-9c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 7 8h13c.55 0 1.02.196 1.413.587.391.392.587.863.587 1.413v9c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 20 21H7Zm6.5-5.9c.167 0 .33-.017.488-.05.158-.033.304-.092.437-.175l5.1-2.625a.91.91 0 0 0 .475-.8.815.815 0 0 0-.425-.75.865.865 0 0 0-.875-.025l-5.2 2.675-5.2-2.675a.865.865 0 0 0-.875.025.815.815 0 0 0-.425.75.91.91 0 0 0 .475.8l5.1 2.625c.133.083.28.142.438.175.158.033.32.05.487.05Z" /></svg>
+  )
+);
+
+MarkAsUnreadFilled.displayName = 'MarkAsUnreadFilled';
+
+export default MarkAsUnreadFilled;

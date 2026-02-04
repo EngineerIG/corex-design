@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface DriveFolderUploadProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const DriveFolderUpload = React.forwardRef<SVGSVGElement, DriveFolderUploadProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M11 17h2v-4.2l1.6 1.6L16 13l-4-4-4 4 1.4 1.4 1.6-1.6V17Zm-7 3c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 2 18V6c0-.55.196-1.02.587-1.412A1.926 1.926 0 0 1 4 4h6l2 2h8c.55 0 1.02.196 1.413.588.391.391.587.862.587 1.412v10c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 20 20H4Zm0-2h16V8h-8.825l-2-2H4v12Z" /></svg>
+  )
+);
+
+DriveFolderUpload.displayName = 'DriveFolderUpload';
+
+export default DriveFolderUpload;

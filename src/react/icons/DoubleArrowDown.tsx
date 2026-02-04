@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface DoubleArrowDownProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const DoubleArrowDown = React.forwardRef<SVGSVGElement, DoubleArrowDownProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="m12.012 18.797 6.987-6.786c.329-.32.74-.488 1.232-.503.492-.015.918.153 1.276.503.329.321.493.73.493 1.226s-.164.905-.493 1.226l-8.241 8.055c-.18.175-.373.3-.582.373-.21.073-.433.109-.672.109a2.02 2.02 0 0 1-.672-.11 1.577 1.577 0 0 1-.582-.372l-8.242-8.055a1.692 1.692 0 0 1-.515-1.204c-.015-.482.157-.897.515-1.248.328-.32.747-.481 1.254-.481.508 0 .926.16 1.254.481l6.988 6.786Zm0-10.507 6.987-6.786c.329-.32.74-.489 1.232-.503.492-.015.918.153 1.276.503.329.321.493.73.493 1.226s-.164.905-.493 1.226l-8.241 8.055c-.18.176-.373.3-.582.373-.21.072-.433.109-.672.109a2.02 2.02 0 0 1-.672-.11 1.577 1.577 0 0 1-.582-.372L2.515 3.956A1.692 1.692 0 0 1 2 2.752c-.015-.482.157-.897.515-1.248.328-.32.747-.481 1.254-.481.508 0 .926.16 1.254.481l6.988 6.786Z" /></svg>
+  )
+);
+
+DoubleArrowDown.displayName = 'DoubleArrowDown';
+
+export default DoubleArrowDown;

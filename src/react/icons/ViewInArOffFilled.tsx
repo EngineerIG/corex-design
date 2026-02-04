@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface ViewInArOffFilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const ViewInArOffFilled = React.forwardRef<SVGSVGElement, ViewInArOffFilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="m15.178 11.073 2.529-1.456v-1.15l-1.073-.613-2.938 1.737 1.482 1.482Zm-2.58 6.207 1.021-.587v-4.267L9.738 8.545l-1.176-.69-1.072.613v1.15l4.087 2.375v4.7l1.022.588Zm6.871-1.916L9.226 5.121l2.35-1.354a2.01 2.01 0 0 1 1.022-.281c.357 0 .698.093 1.021.28l5.11 2.938a2 2 0 0 1 .753.754c.179.315.268.651.268 1.009v5.875c0 .188-.025.367-.076.537-.051.17-.12.332-.205.485Zm-7.893 3.679-5.11-2.938a2 2 0 0 1-.753-.754 2.012 2.012 0 0 1-.268-1.009V8.467c0-.358.09-.694.268-1.01a2 2 0 0 1 .754-.753l.92-.51 10.422 10.422-4.19 2.427a2.009 2.009 0 0 1-1.021.28 2.01 2.01 0 0 1-1.022-.28Zm9.656 3.908-1.328-1.328h-2.197v-2.044h.357v.205l-13.999-14h.358v.512H2.38V4.099L1 2.719l1.456-1.456 20.232 20.232-1.456 1.456Zm1.584-6.437v2.197l-2.044-2.044v-.153h2.044ZM7.489 1.187V3.23h-.154L5.292 1.187h2.197Zm0 20.436H4.423c-.562 0-1.043-.2-1.443-.6-.4-.4-.6-.882-.6-1.444v-3.065h2.043v3.065H7.49v2.044ZM20.772 6.296V3.23h-3.065V1.187h3.065c.562 0 1.043.2 1.444.6.4.4.6.881.6 1.443v3.066h-2.044Z" /></svg>
+  )
+);
+
+ViewInArOffFilled.displayName = 'ViewInArOffFilled';
+
+export default ViewInArOffFilled;

@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface DeployedCodeUpdateFilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const DeployedCodeUpdateFilled = React.forwardRef<SVGSVGElement, DeployedCodeUpdateFilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M17.242 12.63c1.316 0 2.439.465 3.366 1.393.928.927 1.392 2.05 1.392 3.366 0 1.316-.464 2.438-1.392 3.366-.927.928-2.05 1.392-3.366 1.393-1.316 0-2.44-.465-3.367-1.393-.928-.928-1.392-2.05-1.392-3.366 0-1.317.464-2.439 1.392-3.366.928-.928 2.05-1.392 3.367-1.392Zm-5.71-10.555c.333 0 .65.087.951.262l6.662 3.83a1.856 1.856 0 0 1 .951 1.642v4.424a6.623 6.623 0 0 0-2.854-.643c-1.84 0-3.41.651-4.71 1.952-1.301 1.3-1.952 2.871-1.952 4.71 0 .508.052.996.155 1.464.103.468.258.915.464 1.344a6.333 6.333 0 0 0-.321-.083.9.9 0 0 1-.298-.131l-6.661-3.83a1.854 1.854 0 0 1-.951-1.642V7.809c0-.35.082-.667.249-.953.166-.285.4-.515.702-.689l6.661-3.83a1.87 1.87 0 0 1 .952-.262Zm2.855 15.314.666.666 1.713-1.713v3.902h.952v-3.902l1.713 1.713.666-.666-2.855-2.855-2.855 2.855Zm-2.855-6.892-5.638-3.26-1.024.595v.999l6.662 3.854 6.661-3.854v-.999l-1.022-.595-5.639 3.26Z" /></svg>
+  )
+);
+
+DeployedCodeUpdateFilled.displayName = 'DeployedCodeUpdateFilled';
+
+export default DeployedCodeUpdateFilled;

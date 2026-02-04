@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface SearchCheck2FilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const SearchCheck2Filled = React.forwardRef<SVGSVGElement, SearchCheck2FilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="m8.95 13.55 5.65-5.675-1.425-1.425L8.95 10.7 6.825 8.6 5.4 10l3.55 3.55ZM10 18c-2.233 0-4.125-.775-5.675-2.325C2.775 14.125 2 12.233 2 10c0-2.233.775-4.125 2.325-5.675C5.875 2.775 7.767 2 10 2c2.233 0 4.125.775 5.675 2.325C17.225 5.875 18 7.767 18 10a7.854 7.854 0 0 1-1.675 4.9L22 20.6 20.6 22l-5.7-5.675A7.854 7.854 0 0 1 10 18Z" /></svg>
+  )
+);
+
+SearchCheck2Filled.displayName = 'SearchCheck2Filled';
+
+export default SearchCheck2Filled;

@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface SearchCheck2Props extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const SearchCheck2 = React.forwardRef<SVGSVGElement, SearchCheck2Props>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M10 16c1.667 0 3.083-.583 4.25-1.75C15.417 13.083 16 11.667 16 10c0-1.667-.583-3.083-1.75-4.25C13.083 4.583 11.667 4 10 4c-1.667 0-3.083.583-4.25 1.75C4.583 6.917 4 8.333 4 10c0 1.667.583 3.083 1.75 4.25C6.917 15.417 8.333 16 10 16Zm-1.05-2.45 5.65-5.675-1.425-1.425L8.95 10.7 6.825 8.6 5.4 10l3.55 3.55ZM10 18c-2.233 0-4.125-.775-5.675-2.325C2.775 14.125 2 12.233 2 10c0-2.233.775-4.125 2.325-5.675C5.875 2.775 7.767 2 10 2c2.233 0 4.125.775 5.675 2.325C17.225 5.875 18 7.767 18 10a7.854 7.854 0 0 1-1.675 4.9L22 20.6 20.6 22l-5.7-5.675A7.854 7.854 0 0 1 10 18Z" /></svg>
+  )
+);
+
+SearchCheck2.displayName = 'SearchCheck2';
+
+export default SearchCheck2;

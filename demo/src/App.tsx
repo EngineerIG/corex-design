@@ -1,14 +1,6 @@
 import { useState } from 'react';
 import { version } from '@smcore/corex-design';
-import { useTheme, colorPalettes } from '@smcore/corex-design/react';
-import {
-  ArrowRight,
-  Check,
-  ChevronDown,
-  Heart,
-  Menu,
-  X,
-} from '@smcore/corex-design/react';
+import { useTheme, colorPalettes, allIcons, ArrowRight, Check, Close, Down, Settings } from '@smcore/corex-design/react';
 
 type Section = 'colors' | 'typography' | 'spacing' | 'shadows' | 'animations' | 'zindex' | 'icons' | 'components' | 'usage';
 
@@ -19,15 +11,6 @@ function App() {
 
   const palettes = ['gray', 'blue', 'skyBlue', 'purple', 'red', 'yellow', 'green', 'orange', 'cyan'] as const;
   const shades = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180] as const;
-
-  const icons = [
-    { Icon: ArrowRight, name: 'ArrowRight' },
-    { Icon: Check, name: 'Check' },
-    { Icon: ChevronDown, name: 'ChevronDown' },
-    { Icon: Heart, name: 'Heart' },
-    { Icon: Menu, name: 'Menu' },
-    { Icon: X, name: 'X' },
-  ];
 
   const sections: { id: Section; label: string }[] = [
     { id: 'colors', label: 'Colores' },
@@ -617,19 +600,20 @@ function App() {
               <div>
                 <h2 className="text-3xl font-bold mb-2">Iconos</h2>
                 <p className="text-text-secondary">
-                  Iconos SVG como componentes React/Vue con soporte para tamaño y color.
+                  {Object.keys(allIcons).length} iconos SVG como componentes React/Vue con soporte para tamaño y color.
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
-                {icons.map(({ Icon, name }) => (
+              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3 max-h-[500px] overflow-y-auto p-2">
+                {Object.entries(allIcons).map(([name, Icon]) => (
                   <div
                     key={name}
-                    className="flex flex-col items-center gap-3 p-4 bg-background-secondary rounded-lg hover:bg-background-tertiary transition-colors cursor-pointer group"
+                    className="flex flex-col items-center gap-2 p-3 bg-background-secondary rounded-lg hover:bg-background-tertiary transition-colors cursor-pointer group"
                     onClick={() => copyToClipboard(`<${name} size={24} />`)}
+                    title={name}
                   >
-                    <Icon size={32} className="group-hover:scale-110 transition-transform" />
-                    <span className="text-sm text-text-secondary">{name}</span>
+                    <Icon size={24} className="group-hover:scale-110 transition-transform" />
+                    <span className="text-xs text-text-secondary truncate w-full text-center">{name}</span>
                   </div>
                 ))}
               </div>
@@ -640,7 +624,7 @@ function App() {
                 <div className="flex items-end gap-6 p-6 bg-background-secondary rounded-xl">
                   {[16, 20, 24, 32, 40, 48].map((size) => (
                     <div key={size} className="flex flex-col items-center gap-2">
-                      <Heart size={size} className="text-status-error" />
+                      <Settings size={size} className="text-status-error" />
                       <span className="text-xs text-text-secondary">{size}px</span>
                     </div>
                   ))}
@@ -652,16 +636,16 @@ function App() {
                 <h3 className="text-xl font-semibold mb-4">Colores</h3>
                 <div className="flex gap-4 p-6 bg-background-secondary rounded-xl">
                   <Check size={32} className="text-status-success" />
-                  <X size={32} className="text-status-error" />
+                  <Close size={32} className="text-status-error" />
                   <ArrowRight size={32} className="text-interactive-primary" />
-                  <Heart size={32} className="text-red-80" />
-                  <Menu size={32} className="text-text-secondary" />
+                  <Settings size={32} className="text-purple-80" />
+                  <Down size={32} className="text-text-secondary" />
                 </div>
               </div>
 
               <CodeBlock
                 title="Uso de iconos"
-                code={`import { Check, Heart, ArrowRight } from '@smcore/corex-design/react';
+                code={`import { Check, Settings, ArrowRight } from '@smcore/corex-design/react';
 
 // Tamaño personalizado
 <Check size={24} />
@@ -669,7 +653,7 @@ function App() {
 
 // Con colores
 <Check className="text-status-success" />
-<Heart className="text-red-80" />
+<Settings className="text-purple-80" />
 <ArrowRight className="text-interactive-primary" />`}
               />
             </section>
@@ -699,7 +683,7 @@ function App() {
                     <Check size={16} /> Success
                   </button>
                   <button className="bg-status-error hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-opacity duration-fast">
-                    <X size={16} /> Danger
+                    <Close size={16} /> Danger
                   </button>
                   <button className="bg-interactive-primaryDisabled text-text-tertiary px-6 py-3 rounded-lg font-medium cursor-not-allowed">
                     Disabled
@@ -716,11 +700,11 @@ function App() {
                     <span>Operacion completada exitosamente</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-background-error text-text-error border border-border-error">
-                    <X size={20} />
+                    <Close size={20} />
                     <span>Ha ocurrido un error</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-background-warning text-text-warning border border-border-warning">
-                    <ChevronDown size={20} />
+                    <Down size={20} />
                     <span>Advertencia: revise los datos</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-background-info text-text-info border border-border-info">

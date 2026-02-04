@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface DomainProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const Domain = React.forwardRef<SVGSVGElement, DomainProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M2 19V5c0-.55.196-1.02.587-1.413A1.926 1.926 0 0 1 4 3h6c.55 0 1.02.196 1.412.587C11.804 3.98 12 4.45 12 5v2h8c.55 0 1.02.196 1.413.588.391.391.587.862.587 1.412v10c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 20 21H4c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 2 19Zm2 0h2v-2H4v2Zm0-4h2v-2H4v2Zm0-4h2V9H4v2Zm0-4h2V5H4v2Zm4 12h2v-2H8v2Zm0-4h2v-2H8v2Zm0-4h2V9H8v2Zm0-4h2V5H8v2Zm4 12h8V9h-8v2h2v2h-2v2h2v2h-2v2Zm4-6v-2h2v2h-2Zm0 4v-2h2v2h-2Z" /></svg>
+  )
+);
+
+Domain.displayName = 'Domain';
+
+export default Domain;

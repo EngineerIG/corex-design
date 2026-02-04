@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface InboxTextFilledProps extends React.SVGProps<SVGSVGElement> {
+  size?: string | number;
+}
+
+const InboxTextFilled = React.forwardRef<SVGSVGElement, InboxTextFilledProps>(
+  ({ size = 24, ...props }, ref) => (
+    <svg fill="currentColor" viewBox="0 0 24 24" width={size} height={size} ref={ref} {...props}><path d="M8 12.25h8a.97.97 0 0 0 .712-.287.968.968 0 0 0 .288-.713.968.968 0 0 0-.288-.713.968.968 0 0 0-.712-.287H8a.967.967 0 0 0-.713.287.968.968 0 0 0-.287.713c0 .283.096.52.287.713.192.191.43.287.713.287Zm0-3.5h8a.97.97 0 0 0 .712-.287A.967.967 0 0 0 17 7.75a.967.967 0 0 0-.288-.713A.968.968 0 0 0 16 6.75H8a.968.968 0 0 0-.713.287A.968.968 0 0 0 7 7.75c0 .283.096.52.287.713.192.191.43.287.713.287ZM5 21c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 3 19V5c0-.55.196-1.02.587-1.413A1.926 1.926 0 0 1 5 3h14c.55 0 1.02.196 1.413.587.39.393.587.863.587 1.413v14c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 19 21H5Zm7-5c.533 0 1.025-.137 1.475-.412.45-.275.817-.638 1.1-1.088.1-.15.225-.27.375-.363a.94.94 0 0 1 .5-.137H19V5H5v9h3.55a.94.94 0 0 1 .5.137c.15.092.275.213.375.363.283.45.65.813 1.1 1.088.45.275.942.412 1.475.412Z" /></svg>
+  )
+);
+
+InboxTextFilled.displayName = 'InboxTextFilled';
+
+export default InboxTextFilled;

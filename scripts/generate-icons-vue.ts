@@ -70,9 +70,10 @@ async function generateVueIcons() {
         ],
       });
 
+      // Convert snake_case to PascalCase
       const iconName = svgFile
         .replace('.svg', '')
-        .split('-')
+        .split('_')
         .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
         .join('');
 
@@ -128,12 +129,20 @@ withDefaults(defineProps<${iconName}Props>(), {
     }
   }
 
-  // Generate index file
-  const indexContent = iconNames
+  // Generate index file with individual exports and allIcons registry
+  const individualExports = iconNames
     .map((name) => `export { default as ${name} } from './${name}.vue';`)
     .join('\n');
 
-  await fs.writeFile(path.join(OUTPUT_DIR, 'index.ts'), indexContent + '\n');
+  const allIconsImports = iconNames
+    .map((name) => `import ${name} from './${name}.vue';`)
+    .join('\n');
+
+  const allIconsObject = `export const allIcons = {\n${iconNames.map((name) => `  ${name},`).join('\n')}\n} as const;`;
+
+  const indexContent = `${individualExports}\n\n// Icon registry for iterating over all icons\n${allIconsImports}\n\n${allIconsObject}\n`;
+
+  await fs.writeFile(path.join(OUTPUT_DIR, 'index.ts'), indexContent);
 
   console.log(`\n✓ Generated ${iconNames.length} Vue icon component(s)`);
 }
